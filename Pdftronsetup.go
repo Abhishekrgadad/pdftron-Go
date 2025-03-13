@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"os"
+	
+
 
 	. "github.com/pdftron/pdftron-go/v2"
 )
@@ -13,10 +13,8 @@ func main() {
 	defer PDFNetTerminate()
 
 	filename := "sample.pdf"
-	doc, err := NewPDFDoc(filename)
-	if err != nil {
-		log.Fatalf("Error opening PDF: %v", err)
-	}
+	doc := NewPDFDoc(filename)
+	
 	defer doc.Close()
 
 	pageNum := doc.GetPageCount()
